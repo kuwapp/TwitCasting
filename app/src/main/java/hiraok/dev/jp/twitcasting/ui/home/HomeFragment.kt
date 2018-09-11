@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
         observeViewModel(viewModel)
     }
 
-    fun observeViewModel(viewModel: HomeViewModel) {
+    private fun observeViewModel(viewModel: HomeViewModel) {
         viewModel.twitCastingObservable.observe(this, Observer { data ->
             TwitCastingAdapter(context, data)
         })

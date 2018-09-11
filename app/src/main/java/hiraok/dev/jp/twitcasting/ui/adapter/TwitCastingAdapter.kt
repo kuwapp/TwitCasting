@@ -1,6 +1,7 @@
 package hiraok.dev.jp.twitcasting.ui.adapter
 
 import android.content.Context
+import android.net.Uri
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class TwitCastingAdapter(val context: Context?, val data: List<NewLive>?) : Recy
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val videoPlayer = VideoPlayer(context)
         if (position % 5 == 0) holder.playerView.player = videoPlayer.getPlayer()
+        videoPlayer.start(context!!, Uri.parse(data?.get(position)?.hls_url))
     }
 
 

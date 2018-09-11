@@ -68,7 +68,7 @@ class VideoPlayer(context: Context?) : VideoPlayerEventListener {
     override fun isPlaying() {
     }
 
-    private fun createMediaSource(context: Context, uri: Uri): MediaSource {
+    private fun createMediaSource(context: Context?, uri: Uri): MediaSource {
         val ua = WebView(context).settings.userAgentString
         val factory = DefaultHttpDataSourceFactory(ua)
         return HlsMediaSource(uri, factory, Handler(), null)
