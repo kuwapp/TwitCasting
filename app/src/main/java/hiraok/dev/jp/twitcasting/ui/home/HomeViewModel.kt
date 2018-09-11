@@ -1,11 +1,11 @@
 package hiraok.dev.jp.twitcasting.ui.home
 
 import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import hiraok.dev.jp.twitcasting.api.model.NewLive
+import hiraok.dev.jp.twitcasting.api.repository.TwitCastingRepository
 
 class HomeViewModel : ViewModel() {
-    private val _data = MutableLiveData<String>()
-    val data: LiveData<String>
-    get() = _data
+
+    val twitCastingObservable: LiveData<List<NewLive>> = TwitCastingRepository.getNewLiveList()
 }
