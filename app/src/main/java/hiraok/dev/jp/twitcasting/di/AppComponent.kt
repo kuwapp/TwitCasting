@@ -10,7 +10,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
-    NetworkModule::class])
+    NetworkModule::class,
+    HomeActivityBuilder::class])
 interface AppComponent : AndroidInjector<TwitCastingApplication> {
 
     @Component.Builder
